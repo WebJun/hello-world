@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="submit()" enctype="multipart/form-data">
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="username" formControlName="username">
+  <span *ngIf="form.controls.username.touched && form.controls.username.invalid">Should be 4-12 characters!</span>
+</div>
+<div class="form-group">
+  <input type="password" class="form-control" placeholder="password" formControlName="password">
+  <span *ngIf="form.controls.password.touched && form.controls.password.invalid">Should be minimum 6 characters!</span>
+</div>
+<div class="form-group">
+  <input type="password" class="form-control" placeholder="passwordConfirmation" formControlName="passwordConfirmation">
+  <span *ngIf="
+  form.controls.passwordConfirmation.touched && 
+  form.controls.passwordConfirmation.invalid &&
+  form.controls.password != form.controls.passwordConfirmation
+  ">Password Confirmation does not matched!</span>
+</div>
+<div style="text-align:right;">
+  <button type="submit" class="btn btn-success" id="qq">완료</button>
+</div>
+</form>
+

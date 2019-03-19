@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "front": {
+    "t20": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/front",
+            "outputPath": "dist/t20",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,8 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -58,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "front:build"
+            "browserTarget": "t20:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "front:build:production"
+              "browserTarget": "t20:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "front:build"
+            "browserTarget": "t20:build"
           }
         },
         "test": {
@@ -103,7 +102,7 @@
         }
       }
     },
-    "front-e2e": {
+    "t20-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "front:serve"
+            "devServerTarget": "t20:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "front:serve:production"
+              "devServerTarget": "t20:serve:production"
             }
           }
         },
@@ -132,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "front"
+  "defaultProject": "t20"
 }
