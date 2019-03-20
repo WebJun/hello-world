@@ -7,10 +7,10 @@ export class UserService {
   private url = apiBaseUrl + '/user';
   data;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
     add(data) {
-      return this.http.post(this.url, data);
+      return this.http.post(this.url, JSON.stringify(data));
     }
 
     list() {

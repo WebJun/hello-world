@@ -24,3 +24,16 @@ password VARCHAR(255) NOT NULL COMMENT '비밀번호'
 
 );
 
+
+/back/lib/db.js
+
+var mysql = require('mysql');
+var db = mysql.createConnection({
+  host:'',
+  user:'',
+  password:'',
+  database:''
+});
+db.connect();
+module.exports = db;
+

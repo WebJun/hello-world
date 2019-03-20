@@ -12,9 +12,7 @@ export class UserAddComponent implements OnInit {
 
   buildForm(): void { //1
     this.form = this.formBuilder.group({
-      username:["", [Validators.required, Validators.pattern(/^.{4,12}$/)]],
-      name:["", [Validators.required, Validators.pattern(/^.{4,12}$/)]],
-      email:["", [Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
+      id:["", [Validators.required, Validators.pattern(/^.{4,12}$/)]],
       password:["", [Validators.required, Validators.pattern(/^.{6,16}$/)]],
       passwordConfirmation:["", [Validators.required]],
     }, {
@@ -41,13 +39,14 @@ export class UserAddComponent implements OnInit {
   }
 
   submit() {
-    console.log(1);
+
+    console.log(this.form.value);
     if(this.form.valid){
       this.userService.add(this.form.value)
       .subscribe(
         response => {
           console.log('성공');
-          //console.log(response);
+          console.log(response);
         },
         error => {
           alert('error래');

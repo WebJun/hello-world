@@ -1,10 +1,13 @@
 var express = require('express');
 var db = require('./lib/db');
 var cors = require('cors');
-
+var bodyParser = require('body-parser');
 var app = express();
 
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.get('/api/user', function(request, response) {
   db.query('SELECT * from T_USER', function(err, rows) {
@@ -12,7 +15,18 @@ app.get('/api/user', function(request, response) {
   });
 });
 
+app.post('/api/user', function(request, response) {
+  var post = request.body;
+  response.json(post);
+  //response.writeHead(200);
+  //response.end(request);
 
+  /*
+  db.query('SELECT * from T_USER', function(err, rows) {
+    response.send(rows);
+  });
+  */
+});
 
 
 
